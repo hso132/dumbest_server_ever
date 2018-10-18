@@ -7,7 +7,7 @@ pub mod server
 
     extern crate rand;
 
-    pub fn launch() -> Result<(), Box<std::error::Error>>
+    pub fn launch(port: u32) -> Result<(), Box<std::error::Error>>
     {
         let listener = TcpListener::bind("0.0.0.0:80")?;
         for stream in listener.incoming()
