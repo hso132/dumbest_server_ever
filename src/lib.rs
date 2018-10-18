@@ -9,7 +9,7 @@ pub mod server
 
     pub fn launch(port: u32) -> Result<(), Box<std::error::Error>>
     {
-        let listener = TcpListener::bind("0.0.0.0:80")?;
+        let listener = TcpListener::bind(format!("0.0.0.0:{}",port))?;
         for stream in listener.incoming()
         {
             let stream = stream?;
